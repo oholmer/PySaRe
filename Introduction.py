@@ -39,7 +39,7 @@ validation_loader = torch.utils.data.DataLoader(validation_set,
 # %%===========================================================================
 # Define the model
 
-# Below a Energy Based model with a multilayer perceptron (MLP)
+# Below, an Energy Based model with a multilayer perceptron (MLP)
 # network with two layers of 100 nodes each, intervals is defined.
 
 # Tail ratio used in the integration

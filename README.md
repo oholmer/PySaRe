@@ -18,11 +18,11 @@
 # Introduction
 PySaRe is under development and currently only contains an implementation of the energy-based survival model described in the publication below. 
 
-More models and tools for reliability engineering is under development and will be available soon.
+More models and tools for reliability engineering are under development and will be available soon.
 
 # Examples
 
-PySaRe is currently only documented using the example in Introduction.ipynp.
+PySaRe is currently only documented using the introduction in [Introduction.ipynb](Introduction.ipynb).
 
 # Publications
 The package is based on the following publications
