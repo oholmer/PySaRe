@@ -1,0 +1,9 @@
+numpy
+scipy
+matplotlib
+pandas
+jupyterlab
+torch
+pytorch-lightning
+wandb
+lifelines
