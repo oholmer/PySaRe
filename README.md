@@ -2,7 +2,7 @@
 
 # ◢ &nbsp; PySaRe &nbsp;  ◣
 
-**Python package for survival analysis and reliability engineering**
+**Python package for neural network-based survival analysis and reliability engineering**
 
 <p>
 <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/oholmer/PySaRe" />
@@ -14,15 +14,17 @@
 
 </div>
 
-
 # Introduction
-PySaRe is under development and currently only contains an implementation of the energy-based survival model described in the publication below. 
+PySaRe is a Python package for neural network-based survival analysis and reliability engineering based on PyTorch.
+For an introduction to PySaRe, see [examples/quickstart.ipynb](examples/quickstart.ipynb).
 
-More models and tools for reliability engineering are under development and will be available soon.
 
-# Examples
+# Installation 
+PySaRe is available on pip:
+```
+pip install pysare
+```
 
-PySaRe is currently only documented using the introduction in [Introduction.ipynb](Introduction.ipynb).
 
 # Publications
 The package is based on the following publications

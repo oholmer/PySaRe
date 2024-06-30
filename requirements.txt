@@ -1,3 +1,7 @@
 numpy
 matplotlib
 torch
+torch_lr_finder
+pandas
+scipy
+lifelines
