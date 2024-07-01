@@ -28,7 +28,7 @@ def binomial_log_likelihood(model: Union[TorchSurvivalModel, NumpySurvivalModel]
                             censoring: Union[Literal['KM', 'none'],
                                              FrozenNumpySurvivalModel] = 'KM',
                             plot: Union[bool, Axes] = False) -> pd.DataFrame:
-    """Binomial log-likelihood
+    r"""Binomial log-likelihood
 
     Calculates the binomial log-likelihood score and its integrated counterpart.
     Also considers censoring, see [1] for more information.

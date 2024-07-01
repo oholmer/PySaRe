@@ -5,7 +5,7 @@ from abc import abstractmethod
 from pysare.models.utils import MLP
 
 class LinearHazard(TorchSurvivalModel):
-    """Implements an piecewise linear hazard model
+    r"""Implements an piecewise linear hazard model
     
     The forward output size should be 
         number of intervals + 1 + potential extra inputs required by the grid

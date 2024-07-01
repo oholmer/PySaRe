@@ -25,7 +25,7 @@ from pysare._typing import Batch, AxisLike
 # Log
 # ==============================================================================
 class TrainingLog(pd.DataFrame):
-    """
+    r"""
     A training log based on pandas DataFrame returned by the PySaRe training routine. 
 
     Methods
@@ -38,7 +38,7 @@ class TrainingLog(pd.DataFrame):
         super(TrainingLog, self).__init__(data)
 
     def plot(self, backend: Union[Literal['matplotlib', 'plotext'], AxisLike] = 'matplotlib'):
-        """
+        r"""
         Plots the training and validation loss using the selected backend.
 
         Parameters
@@ -151,7 +151,7 @@ def loss_aggregation_sum(loss_vector):
 
 
 class Trainer():
-    """
+    r"""
     Trainer that implements a training routine for PyTorch Modules, in particular  
     PyaRe SurvivalModels.
 
@@ -283,7 +283,7 @@ class Trainer():
               validation_loader: Optional[Iterable[Batch]] = None,
               early_stopping_patience: Optional[int] = None,
               load_best_model: bool = True):
-        """
+        r"""
         Runs the training routine.
 
         Examples and more: 
@@ -461,7 +461,7 @@ class Trainer():
         return self.log
 
     def plot(self, backend: Union[Literal['matplotlib', 'plotext'], AxisLike] = 'matplotlib'):
-        """
+        r"""
         Plots the training and validation loss using the selected backend.
 
         Parameters

@@ -27,7 +27,7 @@ def concordance_index(model: Union[TorchSurvivalModel, NumpySurvivalModel],
                       censoring: Union[Literal['KM', 'none'],
                                        FrozenNumpySurvivalModel] = 'KM',
                       plot: Union[bool, Axes, Iterable[Axes]] = False) -> DataFrame:
-    """Concordance index of a model on a dataset.
+    r"""Concordance index of a model on a dataset.
 
     Calculates the censoring-corrected truncated time-dependent 
     concordance index (C-index), where: 

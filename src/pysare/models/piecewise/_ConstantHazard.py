@@ -6,7 +6,7 @@ from abc import abstractmethod
 
 
 class ConstantHazard(TorchSurvivalModel):
-    """Implements an piecewise constant hazard model.
+    r"""Implements an piecewise constant hazard model.
     
     The forward output size should be 
         number of intervals + potential extra inputs required by the grid

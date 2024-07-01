@@ -34,7 +34,7 @@ def brier_score(model: Union[TorchSurvivalModel, NumpySurvivalModel],
                 censoring: Union[Literal['KM', 'none'],
                                  FrozenNumpySurvivalModel] = 'KM',
                 plot: Union[bool, Axes] = False) -> pd.DataFrame:
-    """ Brier and integrated Brier score
+    r""" Brier and integrated Brier score
 
     Calculates the brier score and integrated brier score. Also considers 
     censoring, see [1] for more information.

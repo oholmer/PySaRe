@@ -9,13 +9,13 @@ from torch.nn import Module
 from typing import Optional, Union
 
 class EnergyBasedDensity(TorchSurvivalModel):
-    """Implements an energy based survival model.
+    r"""Implements an energy based survival model.
 
     In this model, the density is directly specified using a normalized
     neural network. The unnormalized output from the network is called the 
     energy, hence the name. See [1] for more information.
 
-    The model uses two networks, one in the forward funtion and one to
+    The model uses two networks, one in the forward function and one to
     calculate the energy:
 
     - Forward network
@@ -30,7 +30,7 @@ class EnergyBasedDensity(TorchSurvivalModel):
         The energy network is used to calculate the energy based
         on the output from the  forward network. The input to the energy network
         is the output from the forward network concatenated with a tensor of the 
-        times of interest. The ouptu from the energy network should be a tensor of 
+        times of interest. The output from the energy network should be a tensor of 
         shape (batch_size,1) with numbers in (-inf, inf). 
 
     This model can either be subclassed or instanced. If instanced, a network 
@@ -60,15 +60,15 @@ class EnergyBasedDensity(TorchSurvivalModel):
     -----------
 
     max_time : float
-        Maximal prediciton time. 
+        Maximal prediction time. 
     tail_ratio : float, default=1.2
         Float that determines with point is used to calculate the integral of 
-        the tail of the energy network. The tail is approimated as 
+        the tail of the energy network. The tail is approximated as 
         `tail_energy * max_time * (1- tail_ratio)`
         where `tail_energy` is the energy at time `max_time*tail_ratio`. 
     train_integrator : EnergyIntegrator or int
-        Integrator used during training. Set as acitve integrator after 
-        construction and automatically set when the model is set to traing mode 
+        Integrator used during training. Set as active integrator after 
+        construction and automatically set when the model is set to training mode 
         using the `train` method. Can be changed using the `set_integrators` 
         method. If and integer is provided, `RandomMonteCarlo` with the 
         specified number of samples is used.
@@ -80,7 +80,7 @@ class EnergyBasedDensity(TorchSurvivalModel):
         is used.
     energy_net : Module, optional
         If supplied this net will be used as energy. The `energy_net.forward` 
-        method shold take a tensor of shape `(batch_size, forward_out+1)` and 
+        method should take a tensor of shape `(batch_size, forward_out+1)` and 
         return a tensor of shape `(batch_size, 1)`, where 
         `(batch_size, forward_out)` is the shape of the output from the 
         `self.forward` method when the batch size is `batch_size`; the "+1"

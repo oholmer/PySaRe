@@ -10,7 +10,7 @@ def reverse_cumsum(x):
 
 
 class ConstantDensity(TorchSurvivalModel):
-    """Implements an piecewise constant density model
+    r"""Implements an piecewise constant density model
     
     The forward output size should be 
         number of intervals + 1 + potential extra inputs required by the grid

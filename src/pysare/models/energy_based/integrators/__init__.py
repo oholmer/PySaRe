@@ -1,4 +1,4 @@
-"""Integrators to be used in energy based models.
+r"""Integrators to be used in energy based models.
 
 The following integrators are available:
 

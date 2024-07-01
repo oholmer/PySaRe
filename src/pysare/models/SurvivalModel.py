@@ -10,7 +10,7 @@ from torch.utils.data import DataLoader
 
 
 class TorchSurvivalModel(Module):
-    """Base class for survival models.
+    r"""Base class for survival models.
 
     This class is subclassed in all torch-based survival models.
     """
@@ -19,11 +19,11 @@ class TorchSurvivalModel(Module):
         super(TorchSurvivalModel, self).__init__()
 
     def max_time(self) -> float:
-        """Returns the maximal time for which the model is defined"""
+        r"""Returns the maximal time for which the model is defined"""
         raise NotImplementedError()
 
     def forward_output_size(self, *args, **kwargs):
-        """Returns the required size of the forward output."""
+        r"""Returns the required size of the forward output."""
         raise NotImplementedError()
 
     def to_numpy(self,
@@ -34,7 +34,7 @@ class TorchSurvivalModel(Module):
                  numpy_support: Optional[Tuple[float, float]] = None,
                  batch_size: Optional[int] = None,
                  extrapolation: Literal['set_zero', 'model'] = 'set_zero') -> NumpySurvivalModel:
-        """Converts the model to a NumpySurvivalModel that accepts numpy inputs.
+        r"""Converts the model to a NumpySurvivalModel that accepts numpy inputs.
 
         Implements an interface to a PyTorch model creating a survival model that
         takes NumPy arrays (or any object that can be converted to such) as input.
@@ -80,7 +80,7 @@ class TorchSurvivalModel(Module):
             return self._sample(self.forward(X), num_samples, generator, **kwargs)
 
     def _sample(self, forward_out, num_samples=1, generator=None, burn_in=20, shuffle=True):
-        """Metropolis-Hastings sampling
+        r"""Metropolis-Hastings sampling
 
         Default sampling method for models that does not have a specific 
         implementation.
@@ -160,7 +160,7 @@ class TorchSurvivalModel(Module):
             return T
 
     def log_likelihood(self, X: Tensor, T: Tensor, E: Tensor) -> Tensor:
-        """Returns the likelihood of the observation (X,T,E)
+        r"""Returns the likelihood of the observation (X,T,E)
 
         Parameters
         ----------
@@ -189,7 +189,7 @@ class TorchSurvivalModel(Module):
         return log_likelihood
 
     def density_function(self, X: Tensor, T: Tensor) -> Tensor:
-        """Lifetime density at T given X
+        r"""Lifetime density at T given X
 
         Parameters
         ----------
@@ -207,7 +207,7 @@ class TorchSurvivalModel(Module):
         raise NotImplementedError()
 
     def hazard_function(self, X: Tensor, T: Tensor) -> Tensor:
-        """Hazard function at at T given X
+        r"""Hazard function at at T given X
 
            Parameters
         ----------
@@ -225,7 +225,7 @@ class TorchSurvivalModel(Module):
         return self._density_function(Z, T)/self._survival_function(Z, T)
 
     def log_density_function(self, X: Tensor, T: Tensor) -> Tensor:
-        """Logarithm of the density function at T given X
+        r"""Logarithm of the density function at T given X
 
          Parameters
         ----------
@@ -243,7 +243,7 @@ class TorchSurvivalModel(Module):
         return torch.log(self._density_function(Z, T))
 
     def survival_function(self, X: Tensor, T: Tensor) -> Tensor:
-        """Survival function at T given X
+        r"""Survival function at T given X
 
          Parameters
         ----------
@@ -261,7 +261,7 @@ class TorchSurvivalModel(Module):
         raise NotImplementedError()
 
     def log_survival_function(self, X: Tensor, T: Tensor) -> Tensor:
-        """Logarithm of the survival function at T given X
+        r"""Logarithm of the survival function at T given X
 
          Parameters
         ----------

@@ -15,7 +15,7 @@ class Discretization:
 
 
 class DiscretizationGrid(torch.nn.Module):
-    """Superclass for discretization grids.
+    r"""Superclass for discretization grids.
 
     Superclass this class to define a custom grid.    
     """
@@ -25,21 +25,21 @@ class DiscretizationGrid(torch.nn.Module):
         pass
 
     def max_time(self):
-        """Returns the maximal time in the discretisation."""
+        r"""Returns the maximal time in the discretisation."""
         pass
 
     def num_intervals(self):
-        """Returns the number of intervals in the grid."""
+        r"""Returns the number of intervals in the grid."""
         pass
 
     def extra_forward_output_size(self):
-        """Returns the number elements required by the grid, in adition to 
+        r"""Returns the number elements required by the grid, in adition to 
         those used by the piecewise model."""
         pass
 
 
 class EquidistantGrid(DiscretizationGrid):
-    """Implements an uniform grid.
+    r"""Implements an uniform grid.
 
     A fixed grid with equidistant grid points that can not be trained.
 
@@ -95,7 +95,7 @@ class EquidistantGrid(DiscretizationGrid):
 
 
 class FixedGrid(DiscretizationGrid):
-    """Implements a fixed grid.
+    r"""Implements a fixed grid.
 
     A fixed grid where the discretization is provided by the user, and can not 
     be trained.
@@ -154,7 +154,7 @@ class FixedGrid(DiscretizationGrid):
 
 
 class TrainableGrid(DiscretizationGrid):
-    """Implements a trainable grid.
+    r"""Implements a trainable grid.
 
     A trainable grid where the discretization is parameterized by a tensor 
     which, after applying softmax and normalizing so that they sum up to the
@@ -227,7 +227,7 @@ class TrainableGrid(DiscretizationGrid):
 
 
 class IndividualizedGrid(DiscretizationGrid):
-    """Implements a grid where the discretization depends on the features.
+    r"""Implements a grid where the discretization depends on the features.
 
     This grid uses the output from the forward function of the model to 
     determine the discretization individualy for each sampel.

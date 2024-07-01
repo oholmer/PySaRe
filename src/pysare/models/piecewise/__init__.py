@@ -1,4 +1,4 @@
-"""Piecewise defined models.
+r"""Piecewise defined models.
 
 The piecewise models use a discretization grid from 
 :mod:`pysare.models.piecewise.grid` and and a neural network 

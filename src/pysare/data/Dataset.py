@@ -9,7 +9,7 @@ from torch.types import _dtype
 from typing import Optional, Callable
 
 class Dataset(torch.utils.data.Dataset):
-    """
+    r"""
     Implements a torch dataset for survival data.
 
     Attributes
@@ -36,7 +36,7 @@ class Dataset(torch.utils.data.Dataset):
     """
 
     def __init__(self, X: ArrayLike, T: ArrayLike, E: Optional[ArrayLike] = None, copy: bool = True) -> None:
-        """
+        r"""
         Constructs a Dataset.
 
         Parameters
@@ -110,7 +110,7 @@ class Dataset(torch.utils.data.Dataset):
         return self.X[idx], self.T[idx], self.E[idx]
 
     def right_censor(self, censoring_time: float):
-        """
+        r"""
         Right censors the dataset.
 
         Parameters
@@ -126,7 +126,7 @@ class Dataset(torch.utils.data.Dataset):
         self.T[self.T > censoring_time] = censoring_time
 
     def save_to_file(self, filename):
-        """
+        r"""
         Saves dataset to a file.
 
         Parameters
@@ -143,7 +143,7 @@ class Dataset(torch.utils.data.Dataset):
 
     @classmethod
     def load_from_file(cls, filename: str) -> Dataset:
-        """
+        r"""
         Loads a dataset from a file.
 
         Parameters
@@ -227,7 +227,7 @@ class Dataset(torch.utils.data.Dataset):
         
         
     def to(self, device:Optional[DeviceLikeType] = None, dtype:Optional[_dtype]=None, data_transform:Optional[Callable]=None):
-        """
+        r"""
         Performs Tensor dtype and/or device conversion. 
 
         Parameters

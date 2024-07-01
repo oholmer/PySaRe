@@ -1,4 +1,4 @@
-"""Mixture models
+r"""Mixture models
 
 Models based on a mixture of multiple components. The parameters of each 
 component and the weights in the mixture are determined based on the 

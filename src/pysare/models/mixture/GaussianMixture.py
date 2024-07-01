@@ -42,7 +42,7 @@ class NormalForMixture(torch.nn.Module):
 
 
 class GaussianMixture(MixtureSurvivalModel):
-    """Gaussian mixture model with reflection.
+    r"""Gaussian mixture model with reflection.
     
     Implements a mixture of reflected Gaussian components. Each component is 
     parameterized by a location and scale parameter, corresponding to the mean 

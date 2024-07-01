@@ -4,7 +4,7 @@ import numpy as np
 from tqdm.autonotebook import tqdm
 
 class GridSearch():
-    """Creates and executes grid searches.
+    r"""Creates and executes grid searches.
 
     
     """
@@ -26,7 +26,7 @@ class GridSearch():
         self.result = None
 
     def add_parameter(self, key, values):
-        """Adds a parameter/column to the list of jobs.
+        r"""Adds a parameter/column to the list of jobs.
         
         
         """
@@ -51,7 +51,7 @@ class GridSearch():
     #     pass
 
     def run_jobs(self,experiment, suppress_printing=False):
-        """Runs the grid search.
+        r"""Runs the grid search.
         
         Parameters
         ----------

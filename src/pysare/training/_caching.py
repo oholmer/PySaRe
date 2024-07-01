@@ -37,13 +37,13 @@ class StateCacher:
             module.load_state_dict(torch.load(self.path))
 
     def delete_temp(self):
-        """Deletes temporary files"""
+        r"""Deletes temporary files"""
         if self.delete and os.path.exists(self.path):
             os.remove(self.path)
         self.empty = True
 
     def __del__(self):
-        """Checks if there is a file to delete"""
+        r"""Checks if there is a file to delete"""
         self.delete_temp()
 
         

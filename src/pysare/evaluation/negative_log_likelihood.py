@@ -27,7 +27,7 @@ def negative_log_likelihood(
         data: Union[Tuple[X, T, E], Dataset, DataLoader],
         plot: Union[bool, Axes, Iterable[Axes]] = False
 ) -> DataFrame:
-    """Negative log-likelihood of a model on a dataset
+    r"""Negative log-likelihood of a model on a dataset
 
     Calculates the truncated negative log-likelihood for a model on a dataset. 
     Truncated refers to that the mean log-likelihood of all event times up to 

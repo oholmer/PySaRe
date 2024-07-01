@@ -11,7 +11,7 @@ def reverse_cumsum(x):
 
 
 class LinearDensity(TorchSurvivalModel):
-    """Implements an piecewise linear density model.
+    r"""Implements an piecewise linear density model.
     
     The forward output size should be 
         number of intervals + 2 + potential extra inputs required by the grid

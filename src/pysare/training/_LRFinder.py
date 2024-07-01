@@ -8,7 +8,7 @@ def negative_log_likelihood(model, batch):
 
 
 class WrapLoss(torch.nn.Module):
-    """A Wrapper used to wrap the loss for lr_finder
+    r"""A Wrapper used to wrap the loss for lr_finder
     """
 
     def __init__(self, model, loss_function=negative_log_likelihood, loss_aggregation='mean') -> None:
@@ -33,7 +33,7 @@ class WrapLoss(torch.nn.Module):
 
 
 class WrapModel(torch.nn.Module):
-    """A Wrapper used to wrap a model for lr_finder
+    r"""A Wrapper used to wrap a model for lr_finder
     """
 
     def __init__(self, model) -> None:
@@ -45,7 +45,7 @@ class WrapModel(torch.nn.Module):
 
 
 class WrapDataLoaders(object):
-    """A Wrapper used to change the collate function of a datalaoder
+    r"""A Wrapper used to change the collate function of a datalaoder
     in lr_finder"""
 
     def __init__(self, train_loader, val_loader=None):
@@ -82,7 +82,7 @@ class WrapDataLoaders(object):
 
 
 class LRFinder:
-    """Learning rate range test based on the package torch_lr_finder. 
+    r"""Learning rate range test based on the package torch_lr_finder. 
 
     The learning rate range test increases the learning rate in a pre-training 
     run between two boundaries in a linear or exponential manner. The result 
@@ -151,7 +151,7 @@ class LRFinder:
         non_blocking_transfer=True,
         reset=True
     ):
-        """Performs the learning rate range test. 
+        r"""Performs the learning rate range test. 
 
         Arguments:
         -------
@@ -240,7 +240,7 @@ class LRFinder:
              show_lr=None,
              ax=None,
              suggest_lr=True):
-        """Plots the learning rate range test.
+        r"""Plots the learning rate range test.
 
         Arguments:
         ----------
@@ -278,7 +278,7 @@ class LRFinder:
         return result
 
     def set_lr(self, lr='suggested'):
-        """Sets the learning rate of the optimizer
+        r"""Sets the learning rate of the optimizer
 
         Arguments:
         ----------
@@ -299,6 +299,6 @@ class LRFinder:
             group['lr'] = lr
 
     def reset(self):
-        """Restores the model and optimizer to their initial states. Is run 
+        r"""Restores the model and optimizer to their initial states. Is run 
         by default in range_test if parameter reset i not set to false."""
         return self.backend_lr_finder.reset()

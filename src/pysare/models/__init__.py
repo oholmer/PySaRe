@@ -1,4 +1,4 @@
-"""Implementaions and tools for defining survival models. 
+r"""Implementations and tools for defining survival models. 
 
 For an introduction on how to define and use models, see 
 https://github.com/oholmer/PySaRe/blob/main/Introduction.ipynb.

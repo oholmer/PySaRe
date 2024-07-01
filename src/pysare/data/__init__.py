@@ -1,4 +1,4 @@
-"""Datasets included with PySaRe
+r"""Datasets included with PySaRe
 
 Datasets
 --------

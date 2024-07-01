@@ -1,4 +1,4 @@
-"""PySARE is a package for Data-Driven Survival Analysis and Reliability Engineering based on PyTorch.
+r"""PySaRe is a package for Data-Driven Survival Analysis and Reliability Engineering based on PyTorch.
 
 Submodules
 ----------
@@ -6,7 +6,6 @@ Submodules
 - ``data`` -- Tools for handling data and some included datasets
 - ``training`` -- Tools for training models 
 - ``evaluate`` -- Evaluation metrics
-- ``reliability`` -- Reliability engineering toolbox
 """
 
 from . import data

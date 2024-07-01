@@ -142,7 +142,7 @@ def validate_inputs(batch_size, max_time, X, T, E=None):
 
 
 class NumpySurvivalModel():
-    """NumPy interface to PyTorch Model
+    r"""NumPy interface to PyTorch Model
 
     Implements an interface to a PyTorch model creating a survival model that
     takes NumPy arrays (or any object that can be converted to such) as input.
@@ -260,7 +260,7 @@ class NumpySurvivalModel():
         self.extrapolation = extrapolation
 
     def freeze(self, X: Any) -> FrozenNumpySurvivalModel:
-        """Freezes the model around X,
+        r"""Freezes the model around X,
 
         Freezes the model around a set of covariates/features represented by
         the ArrayLike parameter X"""
@@ -279,15 +279,15 @@ class NumpySurvivalModel():
             return FrozenNumpySurvivalModel(self, forward_out)
 
     def to_torch(self) -> TorchSurvivalModel:
-        """Returns the underlying PyTorch Model."""
+        r"""Returns the underlying PyTorch Model."""
         return self.torch_model
 
     def max_time(self) -> float:
-        """Returns the maximal time after which extrapolation is used."""
+        r"""Returns the maximal time after which extrapolation is used."""
         return self.numpy_support[1]
 
     def log_likelihood(self, X: Any, T: Any, E: Any) -> NDArray:
-        """Returns the log-likelihood given X, T, and E.
+        r"""Returns the log-likelihood given X, T, and E.
 
         Parameters
         ----------
@@ -381,7 +381,7 @@ class NumpySurvivalModel():
             return log_lik
 
     def density_function(self, X: Any, T: Any) -> NDArray:
-        """Returns the density at T given X.
+        r"""Returns the density at T given X.
 
         Parameters
         ----------
@@ -456,7 +456,7 @@ class NumpySurvivalModel():
             return f
 
     def survival_function(self, X, T) -> NDArray:
-        """Returns the survival function at T given X.
+        r"""Returns the survival function at T given X.
 
         Parameters
         ----------
@@ -534,7 +534,7 @@ class NumpySurvivalModel():
             return S
 
     def hazard_function(self, X: Any, T: Any) -> NDArray:
-        """Returns the hazard at T given X.
+        r"""Returns the hazard at T given X.
 
         Parameters
         ----------
@@ -612,7 +612,7 @@ class NumpySurvivalModel():
     def sample(self, X: Any, num_samples: int = 1,
                generator: Optional[torch.Generator] = None,
                **kwargs):
-        """Generate samples from the distribution
+        r"""Generate samples from the distribution
 
         Parameters
         ----------
@@ -657,7 +657,7 @@ class NumpySurvivalModel():
 
 
 class FrozenNumpySurvivalModel():
-    """Freezes a NumPy model around a set of covariates/features
+    r"""Freezes a NumPy model around a set of covariates/features
 
     Parameters
     ----------
@@ -683,19 +683,19 @@ class FrozenNumpySurvivalModel():
                                         self.forward_out[inds].reshape(-1, *self.forward_out.shape[1:]))
 
     def max_time(self) -> float:
-        """Returns the maximal time after which extrapolation is used."""
+        r"""Returns the maximal time after which extrapolation is used."""
         return self.numpy_model.max_time()
 
     def to_torch(self) -> TorchSurvivalModel:
-        """Unfreezes the model and returns the underlying PyTorch model"""
+        r"""Unfreezes the model and returns the underlying PyTorch model"""
         return self.numpy_model.to_torch()
 
     def unfreeze(self,) -> NumpySurvivalModel:
-        """Unfreezes the model and returns the underlying NumPy model"""
+        r"""Unfreezes the model and returns the underlying NumPy model"""
         return self.numpy_model
 
     def log_likelihood(self, T: Any, E: Any) -> NDArray:
-        """Returns the survival function at T.
+        r"""Returns the survival function at T.
 
         Parameters
         ----------
@@ -741,7 +741,7 @@ class FrozenNumpySurvivalModel():
                                                     output_size, squeeze)
 
     def density_function(self, T) -> NDArray:
-        """Returns the density function at T.
+        r"""Returns the density function at T.
 
         Parameters
         ----------
@@ -781,7 +781,7 @@ class FrozenNumpySurvivalModel():
                                                       output_size, squeeze)
 
     def survival_function(self, T) -> NDArray:
-        """Returns the survival function at T.
+        r"""Returns the survival function at T.
 
         Parameters
         ----------
@@ -821,7 +821,7 @@ class FrozenNumpySurvivalModel():
                                                        output_size, squeeze)
 
     def hazard_function(self, T: Any) -> NDArray:
-        """Returns the hazard function at T.
+        r"""Returns the hazard function at T.
 
         Parameters
         ----------
@@ -863,7 +863,7 @@ class FrozenNumpySurvivalModel():
     def sample(self, num_samples: int = 1,
                generator: Optional[torch.Generator] = None,
                **kwargs):
-        """Generate samples from the distribution
+        r"""Generate samples from the distribution
 
         Parameters
         ----------

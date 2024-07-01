@@ -37,7 +37,7 @@ class WeibullForMixture(torch.nn.Module):
 
 
 class WeibullMixture(MixtureSurvivalModel):
-    """Weibull mixture model.
+    r"""Weibull mixture model.
     
     Implements a mixture of Weibull components. Each component is parameterized 
     by a shape and scale parameter, and have the survival function 

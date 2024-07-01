@@ -3,7 +3,7 @@ from pysare.models.SurvivalModel import TorchSurvivalModel
 
 
 class Uniform(TorchSurvivalModel):
-    """Uniform distribution, parameters=[low, high]
+    r"""Uniform distribution, parameters=[low, high]
 
     Implements a uniform distribution with parameters [low, high] (output from 
     forward function) where low and high are the lower respective upper bound 

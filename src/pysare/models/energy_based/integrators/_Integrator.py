@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 
 
 class EnergyIntegrator:
-    """Base class for energy integrators."""
+    r"""Base class for energy integrators."""
 
     def log_integrate(self, model, X, T, t_m, tail_ratio=1.2):
         pass
@@ -15,7 +15,7 @@ class EnergyIntegrator:
 
 
 class RandomMonteCarlo(EnergyIntegrator):
-    """Integrator based on Monte-Carlo integration.
+    r"""Integrator based on Monte-Carlo integration.
 
     Implements Monte-Carlo integration based on uniform sampling of the 
     integration interval.
@@ -59,7 +59,7 @@ class RandomMonteCarlo(EnergyIntegrator):
 
 
 class EquidistantTrapezoidal(EnergyIntegrator):
-    """Integrator based on the Trapezoidal rule.
+    r"""Integrator based on the Trapezoidal rule.
 
     Implements the Trapezoidal rule on an equidistant grid.
 
@@ -128,12 +128,12 @@ _W_I = (1/6, 4/6, 1/6)
 _W_e = (1/12, -1/6, 1/12)
 
 class AdaptiveTrapezoidalSimpsons(EnergyIntegrator):
-    """Adaptive integrator combining Trapezoidal and Simpson's rule.
+    r"""Adaptive integrator combining Trapezoidal and Simpson's rule.
 
-    Implements an adaptive integration scheme where the difference beteween
+    Implements an adaptive integration scheme where the difference between
     the Trapezoidal and Simpson's rule on each segment is used to estimate
     the error on each segment. The method iteratively bisects each interval
-    that does not satisfy atleast one of the tolerances, starting with the 
+    that does not satisfy at least one of the tolerances, starting with the 
     initial integration interval.
 
     Parameters
@@ -142,7 +142,7 @@ class AdaptiveTrapezoidalSimpsons(EnergyIntegrator):
     rtol : float>0, default=1e-4
         Relative tolerance (satisfied if error < value*rtol).
     atol : float>0, default=1e-5
-        Absolut tolerance (satisfied if error < rtol).
+        Absolute tolerance (satisfied if error < rtol).
     """
     def __init__(self, rtol: float = 1e-4, atol: float = 1e-5):
         super(AdaptiveTrapezoidalSimpsons, self).__init__()
