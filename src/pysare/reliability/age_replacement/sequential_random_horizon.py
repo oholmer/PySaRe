@@ -76,7 +76,7 @@ def plot_policy(h, r, ax, color=None, tol=2, resolution=np.inf, plot_opt='-', in
              if item.get_position()[1] < r_inf]
 
     ticks += [r_inf]
-    labels += ['$\infty$']
+    labels += [r"$\infty$"]
     # ax.set_yticks([tick for tick in ax.get_yticks() if tick < r_inf] + [r_inf])
     ax.set_yticks(ticks)
 

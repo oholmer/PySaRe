@@ -8,7 +8,7 @@ with open("README.md") as f:
 
 setuptools.setup(
     name="pysare",
-    version="0.1.1",
+    version="0.1.2",
     author="Olov Holmer",
     author_email="olov.holmer@liu.se",
     description=description,
