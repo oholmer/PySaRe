@@ -16,8 +16,9 @@
 
 # Introduction
 PySaRe is a Python package for neural network-based survival analysis and reliability engineering based on PyTorch.
-For an introduction to PySaRe, see [examples/quickstart.ipynb](examples/quickstart.ipynb).
 
+# Documentation 
+The documentation is available at [readthedocs](https://pysare.readthedocs.io).
 
 # Installation 
 PySaRe is available on pip:
